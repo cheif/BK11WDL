@@ -1,0 +1,74 @@
+#input {
+	border: 1px solid black;
+	border-radius: 5px;
+	float:left;
+}
+
+#multipwrapper {
+	float:left;
+}
+
+#scorewrapper {
+	float: left;
+}
+
+.multiplier {
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 3px;
+	padding: 2px 10px;
+	font-weight: bold;
+	font-size: 20pt;
+	color: white;
+	margin: 90% 0;
+}
+
+#triple {
+	background-image: -webkit-linear-gradient(bottom, rgb(235,101,119) 42%, rgb(204,98,98) 86%);
+}
+#double {
+	background-image: -webkit-linear-gradient(bottom, rgb(135,250,135) 35%, rgb(99,240,108) 60%);
+}
+
+#fat {
+	background-color: black;
+}
+
+.score {
+	text-align: center;
+	border: 1px solid white;
+	border-radius: 3px;
+	padding: 2px 4px;
+	background-color: black;
+	color: white;
+}
+
+
+#standing {
+	float: left;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+.player {
+	float: left;
+	text-align: center;
+}
+
+.player .name {
+	font-size: 20pt;
+	font-weight: bold;
+	padding: 0 20px;
+	border-bottom: 1px solid black;
+}
+
+.player.current .name{
+	color: green;
+	background: black;
+}
+
+
+#player0 {
+	border-right: 1px solid black;
+}
+
