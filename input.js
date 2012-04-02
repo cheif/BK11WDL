@@ -7,7 +7,7 @@ var multiplier = 1;
 var accumlatedscore = [];
 
 $(document).ready(function(){
-	$('.multiplier').click(function(){
+	$('#multipliers .btn').click(function(){
 		var value = parseInt($(this).attr('value'));
 		if(value != 0){
 			multiplier = value;
@@ -17,10 +17,12 @@ $(document).ready(function(){
 		}
 	});
 
-	$('.score').click(function(){
+	$('#scorewrapper .btn').click(function(){
 		var value = parseInt($(this).attr('value'));
 		accumlatedscore.push(multiplier*value);
 		console.log('Player' + currentplayer + ' threw ' + multiplier*value);
+		$('#modal .modal-body').append("<div class='throw'>" + multiplier + '*' + value + '</div>');
+		$('#modal').modal('hide');
 		if((accumlatedscore.sum() + 1 >= (lastrest = $('#player' + currentplayer).children('.round').last().html()))){
 			if (accumlatedscore.sum() == lastrest && multiplier == 2){
 				//Utgang
@@ -42,6 +44,8 @@ $(document).ready(function(){
 		}
 		multiplier = 1;
 	});
+
+	$('#modal').modal({show: false, backdrop: false});
 });
 
 var setscore = function(score){
