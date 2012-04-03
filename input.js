@@ -35,12 +35,10 @@ $(document).ready(function(){
 				var score = 0;
 			}
 			setscore(score);
-			accumlatedscore = [];
 		}
 		else if (accumlatedscore.length == 3){
 			var score = accumlatedscore.sum();
 			setscore(score);
-			accumlatedscore = [];
 		}
 		multiplier = 1;
 	});
@@ -49,12 +47,18 @@ $(document).ready(function(){
 });
 
 var setscore = function(score){
-	var player = $('#player' + currentplayer);
-	var latestscore = parseInt(player.children('.round').last().html());
-	console.log(latestscore);
-	player.append("<div class='round'>" + (latestscore - score) + "</div>");
-	player.removeClass('current');
-	currentplayer = (currentplayer + 1) % 2;
-	$('#player' + currentplayer).addClass('current');
-	//Send the score to backend here?
+	setTimeout(function(){
+		var player = $('#player' + currentplayer);
+		var latestscore = parseInt(player.children('.round').last().html());
+		console.log(latestscore);
+		player.append("<div class='round'>" + (latestscore - score) + "</div>");
+		player.removeClass('current');
+		currentplayer = (currentplayer + 1) % 2;
+		$('#player' + currentplayer).addClass('current');
+
+		/* Reset score */
+		$('#modal .modal-body').html('');
+		accumlatedscore = [];
+		//Send the score to backend here?
+	}, 3000);
 }
